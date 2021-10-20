@@ -19,6 +19,7 @@ client = discord.Client(intents=intents)
 @client.event
 async def on_ready():
     print(f'Logged in as {client.user}!')
+
 @client.event
 async def on_message(msg):
     #test check members online
@@ -112,6 +113,12 @@ async def on_member_join(member):
 @client.event
 async def on_member_remove(member):
     await update_values(member)
+
+@client.event
+async def on_message_edit(before,after):
+    toQuote = 'Tu sais pas écrire tout le monde t\'a vu !!!```'+before.content+'```'
+    await after.reply(toQuote)
+
 
 @client.event
 async def on_member_update(before, after):
