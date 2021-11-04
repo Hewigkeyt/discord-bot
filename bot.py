@@ -116,7 +116,7 @@ async def on_member_remove(member):
 
 @client.event
 async def on_message_edit(before,after):
-    toQuote = 'Tu sais pas écrire tout le monde t\'a vu !!!```'+before.content+'```'
+    toQuote = 'Tu sais pas écrire tout le monde t\'a vu !!!\n```'+before.content+'```'
     await after.reply(toQuote)
 
 
